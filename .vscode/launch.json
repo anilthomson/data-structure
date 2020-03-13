@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearchTree2",
+            "request": "launch",
+            "mainClass": "BinarySearchTree2",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BinarySearch<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "BinarySearch",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DoBinarySearch<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "DoBinarySearch",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FlatmapTest<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "FlatmapTest",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LRUCache<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "LRUCache",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LRUCache2<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "LRUCache2",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NQueenProblem<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "NQueenProblem",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-QuickSort<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "QuickSort",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Solution<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TOH<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "TOH",
+            "projectName": "data-structure_c74d1704"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Tree<data-structure_c74d1704>",
+            "request": "launch",
+            "mainClass": "Tree",
+            "projectName": "data-structure_c74d1704"
+        }
+    ]
+}

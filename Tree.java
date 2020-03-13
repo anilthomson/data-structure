@@ -75,11 +75,11 @@ public class Tree {
 		Node rrnode2x = new Node(90);
 		rnode2.left = rlnodex;
 		rnode2.right = rrnode2x;
-	  
+		System.out.println("Inorder");
 		inorder(root);
-		System.out.println();
+		System.out.println("\nPreorder");
 		preorder(root);
-		System.out.println();
+		System.out.println("\nPostorder");
 		postorder(root);
 	}
 }

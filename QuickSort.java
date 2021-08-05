@@ -12,30 +12,30 @@ class QuickSort
 	smaller (smaller than pivot) to left of 
 	pivot and all greater elements to right 
 	of pivot */
-	int partition(int arr[], int low, int high) 
+	int getActualPivotIndex(int arr[], int low, int high) 
 	{ 
-		int pivot = arr[high]; 
-		int pindex = low; // index of smaller element 
-		for (int j=low; j<high; j++) 
+		int pivotValue = arr[high]; 
+		int pivotIndex = low; // index of smaller element 
+		for (int i=low; i<high; i++) 
 		{ 
 			// If current element is smaller than the pivot 
-			if (arr[j] < pivot) 
+			if (arr[i] < pivotValue) 
 			{
 
-				// swap arr[i] and arr[j] 
-				int temp = arr[pindex]; 
-				arr[pindex] = arr[j]; 
-                arr[j] = temp; 
-                pindex++;
+				// swap value in pivotIndex and current Element
+				int temp = arr[pivotIndex]; 
+				arr[pivotIndex] = arr[i];  //swap current Element with element in pindex
+                arr[i] = temp; 
+                pivotIndex++;
 			} 
 		} 
 
-		// swap arr[i+1] and arr[high] (or pivot) 
-		int temp = arr[pindex]; 
-		arr[pindex] = arr[high]; 
+		//Place the pivotValue at pivotIndex by swapping 
+		int temp = arr[pivotIndex]; 
+		arr[pivotIndex] = pivotValue; 
 		arr[high] = temp; 
 
-		return pindex; 
+		return pivotIndex; 
 	} 
 
 
@@ -50,7 +50,7 @@ class QuickSort
 			/* pi is partitioning index, arr[pi] is 
             now at right place */
            
-			int pi = partition(arr, low, high); 
+			int pi = getActualPivotIndex(arr, low, high); 
             System.out.println(pi);
 			// Recursively sort elements before 
 			// partition and after partition 

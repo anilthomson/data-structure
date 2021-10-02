@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LRUCache",
+            "request": "launch",
+            "mainClass": "interview.LRUCache",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch TrieSortStrings",
+            "request": "launch",
+            "mainClass": "TrieSortStrings",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch AVLTree",
+            "request": "launch",
+            "mainClass": "AVLTree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Trie",
+            "request": "launch",
+            "mainClass": "Trie",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - BinarySearchTree2",
             "request": "launch",
             "mainClass": "BinarySearchTree2",

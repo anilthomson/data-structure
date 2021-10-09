@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CreateGraph",
+            "request": "launch",
+            "mainClass": "graph.CreateGraph",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShortestPathUnWeighted",
+            "request": "launch",
+            "mainClass": "graph.ShortestPathUnWeighted",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch GraphLCA",
+            "request": "launch",
+            "mainClass": "graph.GraphLCA",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch WeightedGraph",
+            "request": "launch",
+            "mainClass": "graph.WeightedGraph",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "graph.Test",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch SegmentTree",
+            "request": "launch",
+            "mainClass": "tree.SegmentTree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch FenwickTree",
+            "request": "launch",
+            "mainClass": "tree.FenwickTree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
             "name": "Launch LRUCache",
             "request": "launch",
             "mainClass": "interview.LRUCache",

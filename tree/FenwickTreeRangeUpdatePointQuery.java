@@ -22,7 +22,8 @@ public class FenwickTreeRangeUpdatePointQuery {
   // does not get used, O(n) construction.
   public FenwickTreeRangeUpdatePointQuery(long[] values) {
 
-    if (values == null) throw new IllegalArgumentException("Values array cannot be null!");
+    if (values == null)
+      throw new IllegalArgumentException("Values array cannot be null!");
 
     N = values.length;
     values[0] = 0L;
@@ -33,7 +34,8 @@ public class FenwickTreeRangeUpdatePointQuery {
 
     for (int i = 1; i < N; i++) {
       int parent = i + lsb(i);
-      if (parent < N) fenwickTree[parent] += fenwickTree[i];
+      if (parent < N)
+        fenwickTree[parent] += fenwickTree[i];
     }
 
     originalTree = fenwickTree;
@@ -72,11 +74,17 @@ public class FenwickTreeRangeUpdatePointQuery {
     return sum;
   }
 
+  public long rangeQuery(int i, int j) {
+    System.out.println (j+" j "+prefixSum(j, currentTree));
+    System.out.println(i+" i "+prefixSum(i-1, currentTree));
+    return prefixSum(j, currentTree) - prefixSum(i -1, currentTree);
+  }
+
   // Returns the value of the least significant bit (LSB)
   // lsb(108) = lsb(0b1101100) = 0b100 = 4
   // lsb(104) = lsb(0b1101000) = 0b1000 = 8
-  // lsb(96)  = lsb(0b1100000) = 0b100000 = 32
-  // lsb(64)  = lsb(0b1000000) = 0b1000000 = 64
+  // lsb(96) = lsb(0b1100000) = 0b100000 = 32
+  // lsb(64) = lsb(0b1000000) = 0b1000000 = 64
   private static int lsb(int i) {
 
     // Isolates the lowest one bit value

@@ -6,6 +6,97 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tarjan",
+            "request": "launch",
+            "mainClass": "graph.Tarjan",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch TarjansSCC2",
+            "request": "launch",
+            "mainClass": "graph.TarjansSCC2",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch TarjansSCC",
+            "request": "launch",
+            "mainClass": "graph.TarjansSCC",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch RotatedArray",
+            "request": "launch",
+            "mainClass": "interview.RotatedArray",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tree",
+            "request": "launch",
+            "mainClass": "tree.Tree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch RedBlackTree",
+            "request": "launch",
+            "mainClass": "tree.RedBlackTree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxMin",
+            "request": "launch",
+            "mainClass": "bitwise.MaxMin",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Rotation",
+            "request": "launch",
+            "mainClass": "tree.Rotation",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShortestPathBFS",
+            "request": "launch",
+            "mainClass": "graph.ShortestPathBFS",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch CoinChange",
+            "request": "launch",
+            "mainClass": "interview.CoinChange",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Samples",
+            "request": "launch",
+            "mainClass": "interview.Samples",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch BitSample",
+            "request": "launch",
+            "mainClass": "bitwise.BitSample",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch BitTest",
+            "request": "launch",
+            "mainClass": "bitwise.BitTest",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
             "name": "Launch CreateGraph",
             "request": "launch",
             "mainClass": "graph.CreateGraph",

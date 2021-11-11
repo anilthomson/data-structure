@@ -2,8 +2,10 @@ package interview;
 
 /* Dynamic Programming Java implementation of Coin 
    Change problem */
-   import java.util.Arrays; 
-  
+   import java.util.Arrays;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.*;
    class CoinChange 
    { 
        static long countWays(int S[], int m, int n) 
@@ -36,9 +38,42 @@ package interview;
        // Driver Function to test above function 
        public static void main(String args[]) 
        { 
-           int arr[] = {1, 2, 3}; 
-           int m = arr.length; 
-           int n = 4; 
-           System.out.println(countWays(arr, m, n)); 
-       } 
+        String str = ")d))";
+        int n = str.length();
+        Map<Integer,Map<Integer,List<Integer>>> map ;
+        //map.values().stream().collect(Collectors.toMap(Function.identity(), Function.identity()));
+        permute(str, 0, n-1);
+        } 
+       private static void permute(String str, int l, int r)
+       {
+           if (l == r)
+               System.out.println(str);
+           else
+           {
+               for (int i = l; i <= r; i++)
+               {
+                   str = swap(str,l,i);
+                   permute(str, l+1, r);
+                   str = swap(str,l,i);
+               }
+           }
+       }
+    
+       /**
+       * Swap Characters at position
+       * @param a string value
+       * @param i position 1
+       * @param j position 2
+       * @return swapped string
+       */
+       public static  String swap(String a, int i, int j)
+       {
+           char temp;
+           char[] charArray = a.toCharArray();
+           temp = charArray[i] ;
+           charArray[i] = charArray[j];
+           charArray[j] = temp;
+           return String.valueOf(charArray);
+       }
+    
    } 

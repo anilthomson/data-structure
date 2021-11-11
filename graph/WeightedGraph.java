@@ -9,13 +9,7 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 public class WeightedGraph {
-    static PriorityQueue<Edge> pq = new PriorityQueue<>((e, f) -> {
-        if (e.weight > f.weight)
-            return +1;
-        else if (e.weight == f.weight)
-            return 0;
-        return -1;
-    });
+    
 
     static class Edge {
         Vertex source;
@@ -190,8 +184,14 @@ public class WeightedGraph {
 
         // System.out.println("Done "+start.name);
     }
-
-    static Map<Vertex, Edge> ShortestPath(Graph graph, Vertex start, Vertex end) {
+    static PriorityQueue<Edge> pq = new PriorityQueue<>((e, f) -> {
+        if (e.weight > f.weight)
+            return +1;
+        else if (e.weight == f.weight)
+            return 0;
+        return -1;
+    });
+    static Map<Vertex, Edge> DAGShortestPath(Graph graph, Vertex start, Vertex end) {
         List<Vertex> path = new ArrayList<>();
         // Queue<Vertex> queue = new LinkedList<Vertex>();
         Map<Vertex, Edge> map = new HashMap<>();
@@ -364,4 +364,6 @@ public class WeightedGraph {
             System.out.println();
         }
     }
+
+   
 }

@@ -2,10 +2,12 @@ package graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 public class ShortestPathUnWeighted {
@@ -57,13 +59,14 @@ public class ShortestPathUnWeighted {
 
     public static void main(String[] args) {
         Graph graph = build();
-        Vertex v3 = graph.getVertex("8");
+        
+     /*   Vertex v3 = graph.getVertex("8");
         Vertex v7 = graph.getVertex("5");
         Map<Vertex, Vertex> shortestPath = ShortestPath(v7, v3);
         while (v3 != null) {
             System.out.println(v3.name);
-            v3= shortestPath.get(v3);
-        }
+            v3 = shortestPath.get(v3);
+        }*/
     }
 
     static Map<Vertex, Vertex> ShortestPath(Vertex start, Vertex end) {
@@ -75,15 +78,15 @@ public class ShortestPathUnWeighted {
         queue.add(start);
         List<Vertex> list = new ArrayList<>();
         list.add(start);
-         while (queue.size() != 0) {
-             Vertex parent = queue.poll();
-             parent.visited = true;
+        while (queue.size() != 0) {
+            Vertex parent = queue.poll();
+            parent.visited = true;
             List<Vertex> adjList = parent.getAdjList();
             for (Vertex child : adjList) {
                 if (!child.visited) {
                     queue.add(child);
                     map.put(child, parent);
-                     if (child.name.equals(end.name))
+                    if (child.name.equals(end.name))
                         return map;
                 }
             }
@@ -92,6 +95,7 @@ public class ShortestPathUnWeighted {
         return map;
     }
 
+    
     static Graph build() {
         Graph graph = new Graph();
         Vertex v0 = new Vertex("0");

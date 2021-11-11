@@ -69,32 +69,32 @@ public class RedBlackTree
 	boolean lr = false;
 	boolean rl = false;
 	// helper function for insertion. Actually this function performs all tasks in single pass only.
-	Node insertHelp(Node root, int data)
+	Node insertHelp(Node node, int data)
 	{
 		// f is true when RED RED conflict is there.
-		boolean f=false;
+		boolean redred=false;
 		
 		//recursive calls to insert at proper position according to BST properties.
-		if(root==null)
+		if(node==null)
 			return(new Node(data));
-		else if(data<root.data)
+		else if(data<node.data)
 		{
-			root.left = insertHelp(root.left, data);
-			root.left.parent = root;
-			if(root!=this.root)
+			node.left = insertHelp(node.left, data);
+			node.left.parent = node;
+			if(node!=this.root)
 			{
-				if(root.colour=='R' && root.left.colour=='R')
-					f = true;
+				if(node.colour=='R' && node.left.colour=='R')
+				redred = true;
 			}
 		}
 		else
 		{
-			root.right = insertHelp(root.right,data);
-			root.right.parent = root;
-			if(root!=this.root)
+			node.right = insertHelp(node.right,data);
+			node.right.parent = node;
+			if(node!=this.root)
 			{
-				if(root.colour=='R' && root.right.colour=='R')
-					f = true;
+				if(node.colour=='R' && node.right.colour=='R')
+				redred = true;
 			}
 		// at the same time of insertion, we are also assigning parent nodes
 		// also we are checking for RED RED conflicts
@@ -103,78 +103,78 @@ public class RedBlackTree
 		// now lets rotate.
 		if(this.ll) // for left rotate.
 		{
-			root = rotateLeft(root);
-			root.colour = 'B';
-			root.left.colour = 'R';
+			node = rotateLeft(node);
+			node.colour = 'B';
+			node.left.colour = 'R';
 			this.ll = false;
 		}
 		else if(this.rr) // for right rotate
 		{
-			root = rotateRight(root);
-			root.colour = 'B';
-			root.right.colour = 'R';
+			node = rotateRight(node);
+			node.colour = 'B';
+			node.right.colour = 'R';
 			this.rr = false;
 		}
 		else if(this.rl) // for right and then left
 		{
-			root.right = rotateRight(root.right);
-			root.right.parent = root;
-			root = rotateLeft(root);
-			root.colour = 'B';
-			root.left.colour = 'R';
+			node.right = rotateRight(node.right);
+			node.right.parent = node;
+			node = rotateLeft(node);
+			node.colour = 'B';
+			node.left.colour = 'R';
 
 			this.rl = false;
 		}
 		else if(this.lr) // for left and then right.
 		{
-			root.left = rotateLeft(root.left);
-			root.left.parent = root;
-			root = rotateRight(root);
-			root.colour = 'B';
-			root.right.colour = 'R';
+			node.left = rotateLeft(node.left);
+			node.left.parent = node;
+			node = rotateRight(node);
+			node.colour = 'B';
+			node.right.colour = 'R';
 			this.lr = false;
 		}
 		// when rotation and recolouring is done flags are reset.
 		// Now lets take care of RED RED conflict
-		if(f)
+		if(redred)
 		{
-			if(root.parent.right == root) // to check which child is the current node of its parent
+			if(node.parent.right == node) // to check which child is the current node of its parent
 			{
-				if(root.parent.left==null || root.parent.left.colour=='B') // case when parent's sibling is black
+				if(node.parent.left==null || node.parent.left.colour=='B') // case when parent's sibling is black
 				{// perform certaing rotation and recolouring. This will be done while backtracking. Hence setting up respective flags.
-					if(root.left!=null && root.left.colour=='R')
+					if(node.left!=null && node.left.colour=='R')
 						this.rl = true;
-					else if(root.right!=null && root.right.colour=='R')
+					else if(node.right!=null && node.right.colour=='R')
 						this.ll = true;
 				}
 				else // case when parent's sibling is red
 				{
-					root.parent.left.colour = 'B';
-					root.colour = 'B';
-					if(root.parent!=this.root)
-						root.parent.colour = 'R';
+					node.parent.left.colour = 'B';
+					node.colour = 'B';
+					if(node.parent!=this.root)
+						node.parent.colour = 'R';
 				}
 			}
 			else
-			{
-				if(root.parent.right==null || root.parent.right.colour=='B')
+			{ // node is left of parent;
+				if(node.parent.right==null || node.parent.right.colour=='B')
 				{
-					if(root.left!=null && root.left.colour=='R')
+					if(node.left!=null && node.left.colour=='R')
 						this.rr = true;
-					else if(root.right!=null && root.right.colour=='R')
+					else if(node.right!=null && node.right.colour=='R')
 						this.lr = true;
 				}
 				else
 				{
-					root.parent.right.colour = 'B';
-					root.colour = 'B';
-					if(root.parent!=this.root)
-						root.parent.colour = 'R';
+					node.parent.right.colour = 'B';
+					node.colour = 'B';
+					if(node.parent!=this.root)
+						node.parent.colour = 'R';
 				}
 			}
-			f = false;
+			redred = false;
 		}
-		return(root);
+		return(node);
 	}
 
 	// function to insert data into tree.

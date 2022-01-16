@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MinimumSpanningTree",
+            "request": "launch",
+            "mainClass": "theory.graph.MinimumSpanningTree",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShortestPath_UnWeighted_BFS",
+            "request": "launch",
+            "mainClass": "theory.graph.ShortestPath_UnWeighted_BFS",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindAllPaths",
+            "request": "launch",
+            "mainClass": "theory.graph.FindAllPaths",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch TopologicalSort",
+            "request": "launch",
+            "mainClass": "theory.graph.TopologicalSort",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShortestPath_UnWeighted",
+            "request": "launch",
+            "mainClass": "theory.graph.ShortestPath_UnWeighted",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graph_BFS",
+            "request": "launch",
+            "mainClass": "theory.graph.Graph_BFS",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graph_DFS",
+            "request": "launch",
+            "mainClass": "theory.graph.Graph_DFS",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
             "name": "Launch Tarjan",
             "request": "launch",
             "mainClass": "graph.Tarjan",

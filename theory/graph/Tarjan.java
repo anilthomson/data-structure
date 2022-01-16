@@ -1,41 +1,12 @@
-package graph;
+package theory.graph;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import java.util.Stack;
 
 public class Tarjan {
-    class Vertex {
-        String name;
-        int nodeId;
-        int lowLinkValue;
+    
 
-        public Vertex(String n) {
-            name = n;
-        }
-
-        List<Vertex> adjList = new ArrayList<Vertex>();
-
-        public List<Vertex> getAdjList() {
-            return adjList;
-        }
-
-    }
-
-    class Graph {
-        Set<Vertex> vertices = new HashSet<>();
-        Vertex start;
-
-        public void addEdge(Vertex source, Vertex dest) {
-            source.getAdjList().add(dest);
-            vertices.add(source);
-            vertices.add(dest);
-            if (start == null)
-                start = source;
-        }
-    }
+    
 
     Graph build() {
         Graph g1 = new Graph();

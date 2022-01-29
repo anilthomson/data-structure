@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class MinimumSpanningTree {
+//A minimum spanning tree is a subset of the edges of a connected, edge-weighted undirected graph that connects all the vertices together, 
+//without any cycles and with the minimum possible total edge weight. That is, it is a spanning tree whose sum of edge weights is as small as possible.
 
     HashSet<Vertex> visited = new HashSet<>();
     PriorityQueue<Edge> pq = new PriorityQueue<>((e, f) -> {
@@ -18,7 +20,7 @@ public class MinimumSpanningTree {
     });
 
     List<Edge> GenerateMinimumSpanningTree(Graph graph) {
-        // Do a dfs with a priority queue
+        // Do a bfs with a priority queue
         Vertex vertex = graph.getVertex();
         List<Edge> mst = new ArrayList<Edge>();
         visited.add(vertex);

@@ -64,26 +64,26 @@ public class Tarjan {
     // Case 2 (Back Edge): When child v is already visited, then minimum of low[u]
     // and Disc[v] will be updated to low[u].
     // low[u] = min(low[u], disc[v]);
-    void SCC(Vertex v) {
-        if (visited.contains(v))
+    void SCC(Vertex node) {
+        if (visited.contains(node))
             return;
-        visited.add(v);
-        stack.add(v);
-        v.lowLinkValue = globalId;
-        v.nodeId = globalId;
+        visited.add(node);
+        stack.add(node);
+        node.lowLinkValue = globalId;
+        node.nodeId = globalId;
         globalId++;
-        for (Vertex n : v.adjList) {
-            SCC(n);
+        for (Vertex child : node.adjList) {
+            SCC(child);
             //if the child is in stack
-            if (stack.contains(n))
-                v.lowLinkValue = Math.min(n.lowLinkValue, v.lowLinkValue);
+            if (stack.contains(child))
+            node.lowLinkValue = Math.min(child.lowLinkValue, node.lowLinkValue);
         }
-        if (v.nodeId == v.lowLinkValue) {
+        if (node.nodeId == node.lowLinkValue) {
 
-            Vertex node = null;
-            while (node != v) {
-                node = stack.pop();
-                System.out.print(node.name + ",");
+            Vertex stacknode = null;
+            while (stacknode != node) {
+                stacknode = stack.pop();
+                System.out.print(stacknode.name + ",");
             }
             System.out.println();
         }

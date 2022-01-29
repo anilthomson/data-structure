@@ -26,7 +26,7 @@ public class Graph_BFS {
 		Graph_BFS bfs = new Graph_BFS();
 
 		for (Vertex v : graph.vertices) {
-			if (!bfs.visited.contains(v)) {
+			if (!bfs.visited.contains(v)) {// handle disconnected graphs
 				bfs.BFS(v);
 			}
 		}

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Dijkstra",
+            "request": "launch",
+            "mainClass": "theory.graph.Dijkstra",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tarjan",
+            "request": "launch",
+            "mainClass": "theory.graph.Tarjan",
+            "projectName": "data-structure_832d5306"
+        },
+        {
+            "type": "java",
             "name": "Launch MinimumSpanningTree",
             "request": "launch",
             "mainClass": "theory.graph.MinimumSpanningTree",

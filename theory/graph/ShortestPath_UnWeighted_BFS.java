@@ -14,11 +14,11 @@ public class ShortestPath_UnWeighted_BFS {
     HashSet<Vertex> visited = new HashSet<>();
     
     Map<Vertex, Vertex> ShortestPath(Vertex start, Vertex end) {
-        List<Vertex> path = new ArrayList<>();
+       // List<Vertex> path = new ArrayList<>();
         Queue<Vertex> queue = new LinkedList<Vertex>();
         Map<Vertex, Vertex> map = new HashMap<>();
         map.put(start, null);
-        path.add(start);
+       // path.add(start);
         queue.add(start);
         List<Vertex> list = new ArrayList<>();
         list.add(start);

@@ -20,7 +20,7 @@ public class Graph_DFS {
 		Graph_DFS dfs = new Graph_DFS();
 
 		for (Vertex v : graph.vertices) {
-			if (!dfs.visited.contains(v)) {
+			if (!dfs.visited.contains(v)) { // handle disconncted graph .
 				dfs.DFS(v);
 			}
 		}

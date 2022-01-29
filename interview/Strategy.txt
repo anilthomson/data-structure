@@ -1,0 +1,3 @@
+Anagram question = Hasktable, push all characters to hashtable with count, then compare contents of hashtable
+                 = Sort characters in both strings and compare
+First Non repeating character - Push to hashtable with count and get the first character with count 1

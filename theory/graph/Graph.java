@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Graph {
-
+    Vertex start;
+    Vertex end;
     Set<Vertex> vertices = new HashSet<>();
     ArrayList<Edge> edgeList = new ArrayList<Edge>();
     Map<Vertex, LinkedList<Edge>> adjacencylist = new HashMap<Vertex, LinkedList<Edge>>();;
@@ -31,6 +32,11 @@ public class Graph {
         return vertices.stream().findFirst().get();
     }
 
+    public void addWeightedEdge(Vertex source, Vertex destination, int weight) {
+        addDirectedEgde(source, destination, weight);
+        addDirectedEgde(destination, source, weight);
+    }
+
     public void addDirectedEgde(Vertex source, Vertex destination, int weight) {
         Edge edge = new Edge(source, destination, weight);
         edgeList.add(edge);
@@ -46,6 +52,7 @@ public class Graph {
 
     public static Graph build() {
         Graph g4 = new Graph();
+
         Vertex v0 = new Vertex("0");
         Vertex v1 = new Vertex("1");
         Vertex v2 = new Vertex("2");
@@ -89,24 +96,34 @@ public class Graph {
         Vertex v7 = new Vertex("7");
         Vertex v8 = new Vertex("8");
         Vertex v9 = new Vertex("9");
-        g4.addDirectedEgde(v0, v1, 4);
-        g4.addDirectedEgde(v0, v3, 5);
-        g4.addDirectedEgde(v1, v2, 1);
-        g4.addDirectedEgde(v1, v4, 7);
-        // g4.addDirectedEgde(v2, v0);
-        g4.addDirectedEgde(v2, v6, 3);
-        g4.addDirectedEgde(v3, v2, 4);
-        g4.addDirectedEgde(v4, v5, 6);
-        g4.addDirectedEgde(v3, v5, 1);
-        g4.addDirectedEgde(v4, v6, 2);
-        g4.addDirectedEgde(v5, v6, 8);
-        g4.addDirectedEgde(v5, v7, 3);
-        g4.addDirectedEgde(v5, v8, 5);
-        g4.addDirectedEgde(v5, v9, 2);
-        g4.addDirectedEgde(v6, v7, 1);
-        g4.addDirectedEgde(v7, v9, 2);
-        g4.addDirectedEgde(v8, v9, 8);
-        // g4.addDirectedEgde(v9, v8);
+        g4.addWeightedEdge(v0, v1, 4);
+        g4.addWeightedEdge(v0, v3, 5);
+        g4.addWeightedEdge(v1, v2, 1);
+        g4.addWeightedEdge(v1, v4, 7);
+        // g4.addWeightedEdge(v2, v0);
+        g4.addWeightedEdge(v2, v6, 3);
+        g4.addWeightedEdge(v3, v2, 4);
+        g4.addWeightedEdge(v4, v5, 6);
+        g4.addWeightedEdge(v3, v5, 1);
+        g4.addWeightedEdge(v4, v6, 2);
+        g4.addWeightedEdge(v5, v6, 8);
+        g4.addWeightedEdge(v5, v7, 3);
+        g4.addWeightedEdge(v5, v8, 5);
+        g4.addWeightedEdge(v5, v9, 2);
+        g4.addWeightedEdge(v6, v7, 1);
+        g4.addWeightedEdge(v7, v9, 2);
+        g4.addWeightedEdge(v8, v9, 8);
+        // g4.addWeightedEdge(v9, v8);
+        g4.start = v0;
+        g4.end = v9;
+        g4.printGraph(g4);
         return g4;
+    }
+
+    public void printGraph(Graph g4) {
+
+        for (Edge edje : g4.edgeList) {
+            System.out.println(edje.source.name + " => " + edje.destination.name);
+        }
     }
 }

@@ -1,0 +1,34 @@
+1. Binary heap :- Binary tree with all nodes are less than the children (min heap)
+    max heap is parent is greater
+    Heap is binary tree with heap in variant.(propery which says each node has smaller than its children)
+2. Priority Queue -FIFO-normal queue but Priority queue using priority- binary heap is the priority queue.
+3. Binary search tree  - left has less than the root and right side greater
+4. Complete binary tree is binary tree with all levels are completely filled except last level
+5. Full tree: 0 or 2 nodes
+6. Perfect binary tree :- All have children and leaf nodes are in same level
+7. Balanced binary tree :- height of left - height of right<=1
+8. Self balanced binary tree:- in any insertion/deletion automtomatically adjust the height( AVL tree, Red black tree and Splay tree)
+9. TRIE :- tryie is tree with every node has 26 children and representing 26 letters. root null then 26 children and ecah child has 26 children and boolean value of end of the word
+10. AVL tree :- balance factor=height of the left-hegiht of the right
+        Left left case:- rotate right
+        Left right case:- rotate left then rotate right
+        Right Right case:- rotate left
+        Right Left case:- Rotate right then rotate left
+11. Red Black Tree:- 
+    1. Every node either red or black
+    2. Root node black
+    3. There is no two adjustanct Red node
+    4. Every path same number of black nodes
+    5. All leaf nodes are black nodes
+    6. Always O(logn)
+    7. Inserting node alwys Red
+12. For more search then AVL tree , if more I/U/D then Red black tree
+13. RR -rotate right    1. Rotate grand parent
+14. Left Rotate :-  Take Node's right node and keep away that right node's left node 
+                    Make the current node as left child of the Node's right node
+                    Make the kept away node as the right child of the current node
+
+15. Right Rotate :- Take the left node's right child keep away
+                    Make the node right child of the left node
+                    Make take away child as the left node of the node
+16. 

@@ -1,0 +1,21 @@
+Anagram question = Hasktable, push all characters to hashtable with count, then compare contents of hashtable
+                 = Sort characters in both strings and compare
+First Non repeating character - Push to hashtable with count and get the first character with count 1
+Largest Sum Contiguous Subarray  = Use max_so_far and max_ending_here.
+    max_ending_here = max_ending_here + a[i]    
+    if(max_so_far < max_ending_here)
+    max_so_far = max_ending_here
+Rotage Image -
+    Transpose => swap array[i][j] , array [j][i]
+    Flip horizondally => swap array[i][j] , array[i][N-1-j] , i =0,N , j=0,N/2
+Longest Palindromic Substring  - Iterate through each character. T
+    Then call expand from middle on that char (string s,start=i;end=i) till it reach either end.
+Number of Islands - For each on rows and columsn. 
+    If there is 1 then increment count and make it 0 and do a dfs with top,bottom,left and right cells.
+Pascal Traiangle = Add first row. Then loop , find previous row = trianlge.get(i-1). 
+    Loop j= 1 to i; row(j) = prev.get(j-1)+prev.get(j)
+Reverse a linked list : Using  prev , current , next  ; while(current!=null)
+Merge k Sorted Lists - Use Priority Queue and pop out.
+Group Anagrams - Two strings are anagrams if and only if their sorted strings are equal. 
+    So , sort and put in list . Return Lis of List
+Merge Intervals - If we sort the intervals by their start value, then each set of intervals that can be merged will appear as a contiguous "run" in the sorted list.
